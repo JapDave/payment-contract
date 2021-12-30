@@ -1,0 +1,19 @@
+dotenv : .env
+dependencies:
+    - OpenZeppelin/openzeppelin-contracts@3.4.0
+    - smartcontractkit/chainlink-brownie-contracts@1.1.1
+compiler:
+    solc:
+      remappings:
+        - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.4.0'
+        - '@chainlink=smartcontractkit/chainlink-brownie-contracts@1.1.1'
+
+wallets:
+  fromkey: ${PRIVATE_KEY}
+
+networks:
+  default: development
+  rinkeby:
+    # host: 'https://rinkeby.infura.io/v3/ec29079ead964e3eb265a865dec7896e'
+    eth_usd_price_feed: '0x8A753747A1Fa494EC906cE90E9f37563A8AF630e'
+    verify: True
